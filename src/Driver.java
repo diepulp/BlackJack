@@ -12,7 +12,22 @@ public class Driver {
         System.out.println( ((StandardCard) card).getSuit());
 
         Deck deck = new StandardDeck();
-        deck.addCard(card);
+
+        System.out.println(deck);
+        deck.dealTopCard();
+       System.out.println(deck);
+//        deck.shuffle();
+//        System.out.println(deck);
+//        deck.shuffle();
+//        System.out.println(deck);
+//        deck.dealTopCard();
+//        System.out.println(deck.discardCount());
+
+//        Deck sDeck = new StandardDeck();
+//        System.out.println(sDeck);
+//        sDeck.dealTopCard();
+//        System.out.println(sDeck);
+        deck.dealTopCard();
         System.out.println(deck);
     }
 }

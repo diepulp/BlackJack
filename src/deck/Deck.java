@@ -1,18 +1,16 @@
 package deck;
 
 import cards.Card;
-import cards.StandardCard;
+
 
 import java.util.*;
 
 
 public class Deck {
-    private List<Card> dealerPile;
-    private List<Card> discardPile;
+    private final List<Card> dealerPile = new ArrayList<>();
+    private final List<Card> discardPile = new ArrayList<>();
 
-    public Deck(){
-        dealerPile = new ArrayList<>();
-    }
+    public Deck(){}
 
     public void addCard(Card card){
         dealerPile.add(card);
@@ -21,15 +19,15 @@ public class Deck {
     //moves all the cards from discard pile to dealerPile
     //then randomizes the position of cards in dealerPile
     public void shuffle(){
-        discardPile = new ArrayList<>();
-        dealerPile.add(discardPile.remove(0));
+        discardPile.add(dealerPile.remove(0));
         Collections.shuffle(dealerPile);
 
     }
 
-    public static Card dealTopCard(Card card) {
-
-        return  card;
+    public Card dealTopCard() {
+        Card removed = dealerPile.remove(0);
+        discardPile.add(removed);
+      return removed;
     }
 
     public int countCard() { return dealerPile.size(); }
