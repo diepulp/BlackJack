@@ -28,6 +28,6 @@ public class Driver {
 //        sDeck.dealTopCard();
 //        System.out.println(sDeck);
         deck.dealTopCard();
-        System.out.println(deck);
+        System.out.println(deck.dealTopCard().getCardText());
     }
 }
